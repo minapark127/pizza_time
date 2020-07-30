@@ -16,6 +16,7 @@ const Header = styled.header`
   }
   box-shadow: 0px 4px 17px -6px rgba(0, 0, 0, 0.3);
 `;
+
 const Ul = styled.ul`
   display: flex;
 `;
@@ -26,10 +27,10 @@ const SLink = styled(Link)`
   display: flex;
   justify-content: center;
   align-items: center;
-  border-bottom: 5px solid transparent;
+  border-bottom: 3px solid transparent;
   &:not(:first-child) {
     width: 100px;
-    border-bottom: 5px solid
+    border-bottom: 3px solid
       ${(props) => (props.current ? "#f51406" : "transparent")};
   }
   text-shadow: ${(props) =>
@@ -37,7 +38,7 @@ const SLink = styled(Link)`
       ? `2.5px 2.5px 10px rgba(128, 128, 128, 1),
     -3px -3px 10px rgba(128, 128, 128, 1)`
       : "none"};
-  transition: border-bottom, text-shadow 0.25s ease-in;
+  transition: border-bottom 0.35s ease-in, text-shadow 0.35s ease-in;
 `;
 
 export default withRouter(({ location: { pathname } }) => (
