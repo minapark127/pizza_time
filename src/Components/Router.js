@@ -2,7 +2,7 @@ import React from "react";
 import { HashRouter, Route, Redirect, Switch } from "react-router-dom";
 import Home from "Routes/Home";
 import Movie from "Routes/Movie";
-import Tv from "Routes/Tv";
+import Tv from "Routes/TV";
 import Search from "Routes/Search";
 import Header from "Components/Header";
 
