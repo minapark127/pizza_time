@@ -1,5 +1,6 @@
 import React from "react";
 import HomePresenter from "./HomePresenter";
+import { trendingApi } from "api";
 
 export default class extends React.Component {
   state = {
@@ -8,10 +9,34 @@ export default class extends React.Component {
     error: null,
   };
 
+  async componentDidMount() {
+    try {
+      const {
+        data: { results: trendingAll },
+      } = await trendingApi.trendingAll();
+
+      this.setState({
+        trendingAll,
+      });
+    } catch {
+      this.setState({
+        error: "❌cannot find information on trending❌",
+      });
+    } finally {
+      this.setState({
+        isLoading: false,
+      });
+    }
+  }
+
   render() {
-    const { result, isLoading, error } = this.state;
+    const { trendingAll, isLoading, error } = this.state;
     return (
-      <HomePresenter result={result} isLoading={isLoading} error={error} />
+      <HomePresenter
+        trendingAll={trendingAll}
+        isLoading={isLoading}
+        error={error}
+      />
     );
   }
 }
