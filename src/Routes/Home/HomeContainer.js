@@ -14,7 +14,6 @@ export default class extends React.Component {
       const {
         data: { results: trendingAll },
       } = await trendingApi.trendingAll();
-
       this.setState({
         trendingAll,
       });
