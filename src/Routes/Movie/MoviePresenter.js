@@ -21,11 +21,11 @@ const MoviePresenter = ({ nowPlaying, topRated, upcoming, isLoading, error }) =>
               <div>
                 {movie.vote_average && movie.vote_average > 5 ? (
                   <span role="img" aria-label="good">
-                    👍
+                    😇
                   </span>
                 ) : (
                   <span role="img" aria-label="bad">
-                    👎
+                    🤬
                   </span>
                 )}
                 {movie.vote_average}/10
@@ -43,11 +43,11 @@ const MoviePresenter = ({ nowPlaying, topRated, upcoming, isLoading, error }) =>
               <div>
                 {movie.vote_average && movie.vote_average > 5 ? (
                   <span role="img" aria-label="good">
-                    👍
+                    😇
                   </span>
                 ) : (
                   <span role="img" aria-label="bad">
-                    👎
+                    🤬
                   </span>
                 )}
                 {movie.vote_average}/10
@@ -65,11 +65,11 @@ const MoviePresenter = ({ nowPlaying, topRated, upcoming, isLoading, error }) =>
               <div>
                 {movie.vote_average && movie.vote_average > 5 ? (
                   <span role="img" aria-label="good">
-                    👍
+                    😇
                   </span>
                 ) : (
                   <span role="img" aria-label="bad">
-                    👎
+                    🤬
                   </span>
                 )}
                 {movie.vote_average}/10
