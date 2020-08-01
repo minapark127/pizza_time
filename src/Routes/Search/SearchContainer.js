@@ -7,15 +7,27 @@ export default class extends React.Component {
     movieResult: null,
     tvResult: null,
     searchInput: "",
+    submittedInput: "",
     isLoading: false,
     error: null,
   };
 
-  handleSubmit = () => {
-    const { searchInput } = this.state;
+  handleSubmit = (event) => {
+    event.preventDefault();
+    const { searchInput, submittedInput } = this.state;
+    this.setState({
+      submittedInput: searchInput,
+    });
     if (searchInput !== "") {
       this.searchByInput();
     }
+  };
+
+  updateInput = (event) => {
+    const {
+      target: { value },
+    } = event;
+    this.setState({ searchInput: value });
   };
 
   searchByInput = async () => {
@@ -45,15 +57,24 @@ export default class extends React.Component {
   };
 
   render() {
-    const { movieResult, tvResult, searchInput, isLoading, error } = this.state;
+    const {
+      movieResult,
+      tvResult,
+      searchInput,
+      submittedInput,
+      isLoading,
+      error,
+    } = this.state;
     return (
       <SearchPresenter
         movieResult={movieResult}
         tvResult={tvResult}
         searchInput={searchInput}
+        submittedInput={submittedInput}
         isLoading={isLoading}
         error={error}
         handleSubmit={this.handleSubmit}
+        updateInput={this.updateInput}
       />
     );
   }
