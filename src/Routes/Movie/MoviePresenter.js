@@ -2,10 +2,9 @@ import React from "react";
 import PropTypes from "prop-types";
 import styled from "styled-components";
 import Section from "Components/Section";
+import View from "Components/View";
 
 const Container = styled.section``;
-
-const Detail = styled.div``;
 
 const MoviePresenter = ({ nowPlaying, topRated, upcoming, isLoading, error }) =>
   isLoading ? (
@@ -15,66 +14,45 @@ const MoviePresenter = ({ nowPlaying, topRated, upcoming, isLoading, error }) =>
       {nowPlaying && nowPlaying.length > 0 && (
         <Section title="Now Playing">
           {nowPlaying.map((movie) => (
-            <Detail key={movie.id}>
-              <div>{movie.poster_path}</div>
-              <span>{movie.title}</span>
-              <div>
-                {movie.vote_average && movie.vote_average > 5 ? (
-                  <span role="img" aria-label="good">
-                    😇
-                  </span>
-                ) : (
-                  <span role="img" aria-label="bad">
-                    🤬
-                  </span>
-                )}
-                {movie.vote_average}/10
-              </div>
-            </Detail>
+            <View
+              key={movie.id}
+              id={movie.id}
+              rating={movie.vote_average}
+              year={movie.release_date.substring(0, 4)}
+              imgUrl={movie.poster_path}
+              title={movie.title}
+              isMovie={true}
+            />
           ))}
         </Section>
       )}
       {topRated && topRated.length > 0 && (
         <Section title="Top Rated">
           {topRated.map((movie) => (
-            <Detail key={movie.id}>
-              <div>{movie.poster_path}</div>
-              <span>{movie.title}</span>
-              <div>
-                {movie.vote_average && movie.vote_average > 5 ? (
-                  <span role="img" aria-label="good">
-                    😇
-                  </span>
-                ) : (
-                  <span role="img" aria-label="bad">
-                    🤬
-                  </span>
-                )}
-                {movie.vote_average}/10
-              </div>
-            </Detail>
+            <View
+              key={movie.id}
+              id={movie.id}
+              rating={movie.vote_average}
+              year={movie.release_date.substring(0, 4)}
+              imgUrl={movie.poster_path}
+              title={movie.title}
+              isMovie={true}
+            />
           ))}
         </Section>
       )}
       {upcoming && upcoming.length > 0 && (
         <Section title="Upcoming">
           {upcoming.map((movie) => (
-            <Detail key={movie.id}>
-              <div>{movie.poster_path}</div>
-              <span>{movie.title}</span>
-              <div>
-                {movie.vote_average && movie.vote_average > 5 ? (
-                  <span role="img" aria-label="good">
-                    😇
-                  </span>
-                ) : (
-                  <span role="img" aria-label="bad">
-                    🤬
-                  </span>
-                )}
-                {movie.vote_average}/10
-              </div>
-            </Detail>
+            <View
+              key={movie.id}
+              id={movie.id}
+              rating={movie.vote_average}
+              year={movie.release_date.substring(0, 4)}
+              imgUrl={movie.poster_path}
+              title={movie.title}
+              isMovie={true}
+            />
           ))}
         </Section>
       )}

@@ -2,10 +2,9 @@ import React from "react";
 import PropTypes from "prop-types";
 import styled from "styled-components";
 import Section from "Components/Section";
+import View from "Components/View";
 
 const Container = styled.section``;
-
-const Detail = styled.div``;
 
 const Form = styled.form``;
 
@@ -41,22 +40,17 @@ const SearchPresenter = ({
             <h2>Showing results for "{submittedInput}"</h2>
             <Section title="Results on movies">
               {movieResult.map((movie) => (
-                <Detail key={movie.id}>
-                  <div>{movie.poster_path}</div>
-                  <span>{movie.title}</span>
-                  <div>
-                    {movie.vote_average && movie.vote_average > 5 ? (
-                      <span role="img" aria-label="good">
-                        😇
-                      </span>
-                    ) : (
-                      <span role="img" aria-label="bad">
-                        🤬
-                      </span>
-                    )}
-                    {movie.vote_average}/10
-                  </div>
-                </Detail>
+                <View
+                  key={movie.id}
+                  id={movie.id}
+                  rating={movie.vote_average}
+                  year={
+                    movie.release_date ? movie.release_date.substring(0, 4) : ""
+                  }
+                  imgUrl={movie.poster_path}
+                  title={movie.title}
+                  isMovie={true}
+                />
               ))}
             </Section>
           </>
@@ -64,22 +58,15 @@ const SearchPresenter = ({
         {tvResult && tvResult.length > 0 && (
           <Section title="Results on tv shows">
             {tvResult.map((tv) => (
-              <Detail key={tv.id}>
-                <div>{tv.poster_path}</div>
-                <span>{tv.name}</span>
-                <div>
-                  {tv.vote_average && tv.vote_average > 5 ? (
-                    <span role="img" aria-label="good">
-                      😇
-                    </span>
-                  ) : (
-                    <span role="img" aria-label="bad">
-                      🤬
-                    </span>
-                  )}
-                  {tv.vote_average}/10
-                </div>
-              </Detail>
+              <View
+                key={tv.id}
+                id={tv.id}
+                rating={tv.vote_average}
+                year={tv.first_air_date.substring(0, 4)}
+                imgUrl={tv.poster_path}
+                title={tv.name}
+                isMovie={false}
+              />
             ))}
           </Section>
         )}

@@ -14,7 +14,7 @@ export default class extends React.Component {
 
   handleSubmit = (event) => {
     event.preventDefault();
-    const { searchInput, submittedInput } = this.state;
+    const { searchInput } = this.state;
     this.setState({
       submittedInput: searchInput,
     });

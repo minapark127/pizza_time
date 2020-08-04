@@ -2,10 +2,9 @@ import React from "react";
 import PropTypes from "prop-types";
 import styled from "styled-components";
 import Section from "Components/Section";
+import View from "Components/View";
 
 const Container = styled.section``;
-
-const Detail = styled.div``;
 
 const TVPresenter = ({ onTheAir, topRated, popular, isLoading, error }) =>
   isLoading ? (
@@ -15,22 +14,45 @@ const TVPresenter = ({ onTheAir, topRated, popular, isLoading, error }) =>
       {onTheAir && onTheAir.length > 0 && (
         <Section title="On the Air">
           {onTheAir.map((tv) => (
-            <Detail key={tv.id}>
-              <div>{tv.poster_path}</div>
-              <div>{tv.name}</div>
-              <div>
-                {tv.vote_average && tv.vote_average > 5 ? (
-                  <span role="img" aria-label="good">
-                    😇
-                  </span>
-                ) : (
-                  <span role="img" aria-label="bad">
-                    🤬
-                  </span>
-                )}
-                {tv.vote_average}/10
-              </div>
-            </Detail>
+            <View
+              key={tv.id}
+              id={tv.id}
+              rating={tv.vote_average}
+              year={tv.first_air_date.substring(0, 4)}
+              imgUrl={tv.poster_path}
+              title={tv.name}
+              isMovie={false}
+            />
+          ))}
+        </Section>
+      )}
+      {topRated && topRated.length > 0 && (
+        <Section title="Top Rated">
+          {topRated.map((tv) => (
+            <View
+              key={tv.id}
+              id={tv.id}
+              rating={tv.vote_average}
+              year={tv.first_air_date.substring(0, 4)}
+              imgUrl={tv.poster_path}
+              title={tv.name}
+              isMovie={false}
+            />
+          ))}
+        </Section>
+      )}
+      {popular && popular.length > 0 && (
+        <Section title="Popular">
+          {popular.map((tv) => (
+            <View
+              key={tv.id}
+              id={tv.id}
+              rating={tv.vote_average}
+              year={tv.first_air_date.substring(0, 4)}
+              imgUrl={tv.poster_path}
+              title={tv.name}
+              isMovie={false}
+            />
           ))}
         </Section>
       )}
