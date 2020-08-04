@@ -6,8 +6,9 @@ const Header = styled.header`
   width: 100vw;
   height: 60px;
   padding: 10px;
+  margin-bottom: 30px;
   font-size: 18px;
-  font-weight: 500;
+  font-weight: 600;
   text-transform: uppercase;
   position: sticky;
   top: 0;
@@ -15,6 +16,9 @@ const Header = styled.header`
     font-size: 30px;
   }
   box-shadow: 0px 4px 17px -6px rgba(0, 0, 0, 0.3);
+  background-color: rgba(60, 63, 66, 0.5);
+  backdrop-filter: saturate(180%) blur(10px);
+  z-index: 1;
 `;
 
 const Ul = styled.ul`
@@ -32,6 +36,13 @@ const SLink = styled(Link)`
     width: 100px;
     border-bottom: 3px solid
       ${(props) => (props.current ? "#f51406" : "transparent")};
+    &:hover {
+      border-bottom: 3px solid #f51406;
+    }
+  }
+  &:hover {
+    text-shadow: 2.5px 2.5px 10px rgba(128, 128, 128, 1),
+      -3px -3px 10px rgba(128, 128, 128, 1);
   }
   text-shadow: ${(props) =>
     props.current
