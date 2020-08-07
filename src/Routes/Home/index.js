@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import useHome from "./useHome";
 import Landing from "../../Components/Landing";
+import Helmet from "react-helmet";
 
 const Container = styled.div`
   width: 100vw;
@@ -13,21 +14,28 @@ function Home() {
   const { trending, isLoading, error } = useHome();
   const trend = trending[0];
 
-  return isLoading ? (
-    "Loading.."
-  ) : (
-    <Container>
-      {trend && (
-        <>
-          <Landing
-            title={trend.title ? trend.title : trend.name}
-            isMovie={trend.media_type === "movie" ? true : false}
-            id={trend.id}
-            backdropPath={trend.backdrop_path}
-          />
-        </>
+  return (
+    <>
+      <Helmet>
+        <title>Pizza Time</title>
+      </Helmet>
+      {isLoading ? (
+        "Loading.."
+      ) : (
+        <Container>
+          {trend && (
+            <>
+              <Landing
+                title={trend.title ? trend.title : trend.name}
+                isMovie={trend.media_type === "movie" ? true : false}
+                id={trend.id}
+                backdropPath={trend.backdrop_path}
+              />
+            </>
+          )}
+        </Container>
       )}
-    </Container>
+    </>
   );
 }
 export default Home;

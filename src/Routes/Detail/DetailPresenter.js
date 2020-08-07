@@ -1,6 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import styled from "styled-components";
+import Helmet from "react-helmet";
 
 const Container = styled.section`
   width: 100vw;
@@ -105,13 +106,21 @@ const Video = styled.div`
   }
 `;
 
-const DetailPresenter = ({ result, isLoading, error, recommend }) =>
+const DetailPresenter = ({ result, isLoading, error }) =>
   isLoading ? (
     "loading..."
   ) : (
     <Container>
       {result && (
         <>
+          <Helmet>
+            <title>
+              {result.original_title
+                ? result.original_title
+                : result.original_name}{" "}
+              | Pizza Time
+            </title>
+          </Helmet>
           <Backdrop
             bgUrl={`https://image.tmdb.org/t/p/original${result.backdrop_path}`}
           />
@@ -123,8 +132,16 @@ const DetailPresenter = ({ result, isLoading, error, recommend }) =>
                     ? `https://image.tmdb.org/t/p/w400${result.poster_path}`
                     : require("../../assets/noPoster.png")
                 }
-                alt={`poster for ${result.title}`}
-                title={result.title}
+                alt={`poster for ${
+                  result.original_title
+                    ? result.original_title
+                    : result.original_name
+                }`}
+                title={
+                  result.original_title
+                    ? result.original_title
+                    : result.original_name
+                }
               ></Poster>
               <Info>
                 <Title>

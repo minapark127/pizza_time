@@ -4,6 +4,7 @@ import styled from "styled-components";
 import Section from "Components/Section";
 import View from "Components/View";
 import Message from "../../Components/Message";
+import Helmet from "react-helmet";
 
 const Container = styled.section`
   width: 97vw;
@@ -57,6 +58,9 @@ const SearchPresenter = ({
   updateInput,
 }) => (
   <Container>
+    <Helmet>
+      <title>Search | Pizza Time</title>
+    </Helmet>
     <Form onSubmit={handleSubmit}>
       <Input
         placeholder="search for movies or tv shows"
@@ -67,11 +71,19 @@ const SearchPresenter = ({
       <Button type="button" value="Search" onClick={handleSubmit} />
     </Form>
     {isLoading ? (
-      "loading..."
+      <>
+        "loading..."
+        <Helmet>
+          <title>Searching... | Pizza Time</title>
+        </Helmet>
+      </>
     ) : (
       <>
         {movieResult && movieResult.length > 0 && (
           <>
+            <Helmet>
+              <title>Results on {submittedInput} | Pizza Time</title>
+            </Helmet>
             <h2>Showing results for "{submittedInput}"</h2>
             <Section title="Results on movies">
               {movieResult.map((movie) => (
