@@ -4,13 +4,45 @@ import styled from "styled-components";
 import Section from "Components/Section";
 import View from "Components/View";
 
-const Container = styled.section``;
+const Container = styled.section`
+  width: 97vw;
+  margin: 0 auto;
+  margin-top: 30px;
+`;
 
-const Form = styled.form``;
+const Form = styled.form`
+  width: 100%;
+  display: flex;
+  justify-content: center;
+`;
 
-const Input = styled.input``;
+const Input = styled.input`
+  all: unset;
+  width: 300px;
+  border-bottom: 1px solid #f0e2dc;
+  padding: 10px;
+  :focus {
+    border-bottom: 1px solid #f51406;
+  }
+`;
 
-const Button = styled.input``;
+const Button = styled.input`
+  all: unset;
+  margin-left: 20px;
+  background-color: rgba(245, 20, 6, 0.8);
+  color: #f0e2dc;
+  border-radius: 7px;
+  padding: 10px 15px;
+  box-shadow: 0px 4px 20px -3px rgba(0, 0, 0, 0.35);
+  transition: transform 1s linear;
+  :hover {
+    cursor: pointer;
+    background-color: rgba(245, 20, 6, 0.6);
+  }
+  :active {
+    transform: scale(0.8);
+  }
+`;
 
 const SearchPresenter = ({
   movieResult,
@@ -28,6 +60,7 @@ const SearchPresenter = ({
         placeholder="search for movies or tv shows"
         value={searchInput}
         onChange={updateInput}
+        autoFocus
       />
       <Button type="button" value="Search" onClick={handleSubmit} />
     </Form>
