@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 import styled from "styled-components";
 import Section from "Components/Section";
 import View from "Components/View";
+import Message from "../../Components/Message";
 
 const Container = styled.section``;
 
@@ -56,6 +57,7 @@ const MoviePresenter = ({ nowPlaying, topRated, upcoming, isLoading, error }) =>
           ))}
         </Section>
       )}
+      {error && <Message color="#f51406" text={error} />}
     </Container>
   );
 

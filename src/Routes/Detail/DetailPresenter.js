@@ -1,7 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
 import styled from "styled-components";
-import { Link } from "react-router-dom";
 
 const Container = styled.section`
   width: 100vw;
@@ -106,7 +105,7 @@ const Video = styled.div`
   }
 `;
 
-const DetailPresenter = ({ result, isLoading, error }) =>
+const DetailPresenter = ({ result, isLoading, error, recommend }) =>
   isLoading ? (
     "loading..."
   ) : (
@@ -125,6 +124,7 @@ const DetailPresenter = ({ result, isLoading, error }) =>
                     : require("../../assets/noPoster.png")
                 }
                 alt={`poster for ${result.title}`}
+                title={result.title}
               ></Poster>
               <Info>
                 <Title>
@@ -167,7 +167,14 @@ const DetailPresenter = ({ result, isLoading, error }) =>
                   </Item>
                   {result.imdb_id ? (
                     <a href={`https://www.imdb.com/title/${result.imdb_id}`}>
-                      <Item>IMDB</Item>
+                      <Item>
+                        <img
+                          src="https://m.media-amazon.com/images/G/01/IMDb/BG_rectangle._CB1509060989_SY230_SX307_AL_.png"
+                          width="40px"
+                          alt="IMDB logo"
+                          title="find on IMDB"
+                        />
+                      </Item>
                     </a>
                   ) : null}
                 </Misc>
@@ -183,14 +190,14 @@ const DetailPresenter = ({ result, isLoading, error }) =>
                   <Videos>
                     {result.videos.results
                       ? result.videos.results.slice(0, 3).map((link) => (
-                          <Video>
+                          <Video key={link.key}>
                             <iframe
                               src={`https://www.youtube.com/embed/${link.key}`}
                               width="260px"
                               height="180px"
+                              title="link.name"
                             />
                             <a
-                              key={link.key}
                               href={`https://www.youtube.com/watch?v=${link.key}`}
                             >
                               <span>

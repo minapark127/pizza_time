@@ -59,7 +59,6 @@ const Title = styled.h2`
   text-align: center;
   text-transform: capitalize;
   margin-bottom: 15px;
-  color:background-color: rgba(240, 226, 220, 1);
 `;
 const More = styled(Link)`
   margin-bottom: 20px;
@@ -73,8 +72,6 @@ const Buttons = styled.section`
     }
   }
 `;
-const ToMovie = styled(Link)``;
-const ToTv = styled(Link)``;
 
 const Landing = ({ title, isMovie, id, backdropPath }) => (
   <>
@@ -90,12 +87,12 @@ const Landing = ({ title, isMovie, id, backdropPath }) => (
         <input type="button" value="view more" />
       </More>
       <Buttons>
-        <ToMovie to={`/movie`}>
+        <Link to={`/movie`}>
           <input type="button" value="▶ see Movies" />
-        </ToMovie>
-        <ToTv to={`/tv`}>
+        </Link>
+        <Link to={`/tv`}>
           <input type="button" value="▶ see TVs" />
-        </ToTv>
+        </Link>
       </Buttons>
     </Container>
   </>

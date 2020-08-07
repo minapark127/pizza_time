@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 import styled from "styled-components";
 import Section from "Components/Section";
 import View from "Components/View";
+import Message from "../../Components/Message";
 
 const Container = styled.section`
   width: 97vw;
@@ -14,6 +15,7 @@ const Form = styled.form`
   width: 100%;
   display: flex;
   justify-content: center;
+  margin-bottom: 30px;
 `;
 
 const Input = styled.input`
@@ -103,6 +105,13 @@ const SearchPresenter = ({
             ))}
           </Section>
         )}
+        {error && <Message color="#e74c3c" text={error} />}
+        {tvResult &&
+          movieResult &&
+          tvResult.length === 0 &&
+          movieResult.length === 0 && (
+            <Message text="Nothing found" color="rgba(240, 226, 220, 0.5)" />
+          )}
       </>
     )}
   </Container>
