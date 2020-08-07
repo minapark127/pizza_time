@@ -6,7 +6,6 @@ const Header = styled.header`
   width: 100vw;
   height: 60px;
   padding: 10px;
-  margin-bottom: 30px;
   font-size: 18px;
   font-weight: 600;
   text-transform: uppercase;

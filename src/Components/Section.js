@@ -8,6 +8,7 @@ const Container = styled.section`
   :not(:last-child) {
     margin-bottom: 50px;
   }
+  margin-top: 30px;
 `;
 
 const Title = styled.h2`

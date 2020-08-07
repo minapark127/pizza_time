@@ -11,7 +11,7 @@ export default class extends React.Component {
     this.state = {
       result: null,
       error: null,
-      loading: true,
+      isLoading: true,
       isMovie: pathname.includes("/movie/"),
     };
   }
