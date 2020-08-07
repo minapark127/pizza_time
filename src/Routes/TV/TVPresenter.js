@@ -4,6 +4,7 @@ import styled from "styled-components";
 import Section from "Components/Section";
 import View from "Components/View";
 import Message from "../../Components/Message";
+import Loader from "../../Components/Loader";
 import Helmet from "react-helmet";
 
 const Container = styled.section``;
@@ -14,7 +15,7 @@ const TVPresenter = ({ onTheAir, topRated, popular, isLoading, error }) => (
       <title>TV | Pizza Time</title>
     </Helmet>
     {isLoading ? (
-      "loading..."
+      <Loader />
     ) : (
       <Container>
         {onTheAir && onTheAir.length > 0 && (

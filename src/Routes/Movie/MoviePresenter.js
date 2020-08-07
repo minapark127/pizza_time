@@ -4,6 +4,7 @@ import styled from "styled-components";
 import Section from "Components/Section";
 import View from "Components/View";
 import Message from "../../Components/Message";
+import Loader from "../../Components/Loader";
 import Helmet from "react-helmet";
 
 const Container = styled.section``;
@@ -20,7 +21,7 @@ const MoviePresenter = ({
       <title>Movie | Pizza Time</title>
     </Helmet>
     {isLoading ? (
-      "loading..."
+      <Loader />
     ) : (
       <Container>
         {nowPlaying && nowPlaying.length > 0 && (

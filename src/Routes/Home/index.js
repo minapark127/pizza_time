@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import useHome from "./useHome";
 import Landing from "../../Components/Landing";
+import Loader from "../../Components/Loader";
 import Helmet from "react-helmet";
 
 const Container = styled.div`
@@ -20,7 +21,7 @@ function Home() {
         <title>Pizza Time</title>
       </Helmet>
       {isLoading ? (
-        "Loading.."
+        <Loader />
       ) : (
         <Container>
           {trend && (

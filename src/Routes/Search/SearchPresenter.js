@@ -4,6 +4,7 @@ import styled from "styled-components";
 import Section from "Components/Section";
 import View from "Components/View";
 import Message from "../../Components/Message";
+import Loader from "../../Components/Loader";
 import Helmet from "react-helmet";
 
 const Container = styled.section`
@@ -72,7 +73,7 @@ const SearchPresenter = ({
     </Form>
     {isLoading ? (
       <>
-        "loading..."
+        <Loader />
         <Helmet>
           <title>Searching... | Pizza Time</title>
         </Helmet>

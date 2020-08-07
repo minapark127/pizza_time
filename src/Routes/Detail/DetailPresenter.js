@@ -2,6 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import styled from "styled-components";
 import Helmet from "react-helmet";
+import Loader from "../../Components/Loader";
 
 const Container = styled.section`
   width: 100vw;
@@ -108,7 +109,7 @@ const Video = styled.div`
 
 const DetailPresenter = ({ result, isLoading, error }) =>
   isLoading ? (
-    "loading..."
+    <Loader />
   ) : (
     <Container>
       {result && (
