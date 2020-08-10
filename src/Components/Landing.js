@@ -22,13 +22,38 @@ const Container = styled.div`
   position: relative;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  justify-content: flex-end;
+  align-items: flex-end;
+`;
+const Welcome = styled.h2`
+  text-align: end;
+  font-size: 50px;
+  span {
+    text-shadow: 2.5px 2.5px 10px rgba(200, 200, 200, 1),
+      -3px -3px 10px rgba(200, 200, 200, 1);
+  }
+  h3 {
+    text-transform: uppercase;
+    font-size: 16px;
+    opacity: 0.9;
+    margin-top: 25px;
+    letter-spacing: 1.2px;
+  }
+`;
+const Title = styled.h2`
+  line-height: 1.2;
+  font-size: 70px;
+  font-weight: 600;
+  text-align: end;
+  text-transform: capitalize;
+  margin-bottom: 15px;
+`;
+
+const Buttons = styled.div`
+  display: flex;
   input {
     all: unset;
     margin-left: 20px;
-    background-color: rgba(245, 20, 6, 0.9);
-    color: #f0e2dc;
     border-radius: 10px;
     padding: 15px 35px;
     box-shadow: 0px 4px 20px -3px rgba(0, 0, 0, 0.35);
@@ -42,28 +67,14 @@ const Container = styled.div`
     }
   }
 `;
-const Welcome = styled.h2`
-  text-transform: uppercase;
-  font-size: 50px;
+const Detail = styled(Link)`
   margin-bottom: 20px;
-  span {
-    text-shadow: 2.5px 2.5px 10px rgba(200, 200, 200, 1),
-      -3px -3px 10px rgba(200, 200, 200, 1);
+  input {
+    background-color: rgba(245, 20, 6, 0.9);
+    color: #f0e2dc;
   }
 `;
-const Title = styled.h2`
-  width: 80%;
-  line-height: 1.2;
-  font-size: 70px;
-  font-weight: 600;
-  text-align: center;
-  text-transform: capitalize;
-  margin-bottom: 15px;
-`;
-const More = styled(Link)`
-  margin-bottom: 20px;
-`;
-const Buttons = styled.section`
+const More = styled.section`
   input {
     background-color: rgba(240, 226, 220, 0.95);
     color: #3c3f42;
@@ -81,18 +92,21 @@ const Landing = ({ title, isMovie, id, backdropPath }) => (
         <span role="img" aria-label="pizza">
           🍕
         </span>
+        <h3>tredning now</h3>
       </Welcome>
       <Title>{title}</Title>
-      <More to={isMovie ? `/movie/${id}` : `/tv/${id}`}>
-        <input type="button" value="view more" />
-      </More>
       <Buttons>
-        <Link to={`/movie`}>
-          <input type="button" value="▶ see Movies" />
-        </Link>
-        <Link to={`/tv`}>
-          <input type="button" value="▶ see TVs" />
-        </Link>
+        <Detail to={isMovie ? `/movie/${id}` : `/tv/${id}`}>
+          <input type="button" value="view detail" />
+        </Detail>
+        <More>
+          <Link to={`/movie`}>
+            <input type="button" value="▶ more Movies" />
+          </Link>
+          <Link to={`/tv`}>
+            <input type="button" value="▶ more TVs" />
+          </Link>
+        </More>
       </Buttons>
     </Container>
   </>

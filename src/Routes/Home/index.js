@@ -3,6 +3,7 @@ import styled from "styled-components";
 import useHome from "./useHome";
 import Landing from "../../Components/Landing";
 import Loader from "../../Components/Loader";
+import Message from "../../Components/Message";
 import Helmet from "react-helmet";
 
 const Container = styled.div`
@@ -34,6 +35,7 @@ function Home() {
               />
             </>
           )}
+          {error && <Message color="#e74c3c" text={error} />}
         </Container>
       )}
     </>

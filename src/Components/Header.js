@@ -10,14 +10,14 @@ const Header = styled.header`
   font-weight: 600;
   text-transform: uppercase;
   position: sticky;
-  top: 0;
+  top: -15px;
   span {
     font-size: 30px;
   }
   box-shadow: 0px 4px 17px -6px rgba(0, 0, 0, 0.3);
   background-color: rgba(60, 63, 66, 0.5);
   backdrop-filter: saturate(180%) blur(10px);
-  z-index: 1;
+  z-index: 2;
 `;
 
 const Ul = styled.ul`

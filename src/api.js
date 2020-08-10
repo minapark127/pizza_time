@@ -44,7 +44,7 @@ export const tvApi = {
 };
 
 export const trendingApi = {
-  trendingAll: () => api.get("trending/all/day"),
+  trendingAll: () => api.get("trending/all/week"),
 };
 
 export default api;
