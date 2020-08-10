@@ -110,7 +110,9 @@ const SearchPresenter = ({
                 key={tv.id}
                 id={tv.id}
                 rating={tv.vote_average}
-                year={tv.first_air_date.substring(0, 4)}
+                year={
+                  tv.first_air_date ? tv.first_air_date.substring(0, 4) : ""
+                }
                 imgUrl={tv.poster_path}
                 title={tv.name}
                 isMovie={false}
