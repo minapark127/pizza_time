@@ -35,7 +35,7 @@ const Tabs = styled.section`
     width: 100%;
     height: 40vh;
     grid-template-rows: 1fr 4fr;
-    margin-bottom: 150px;
+    margin-bottom: 200px;
   }
 `;
 const TabHeader = styled.div`

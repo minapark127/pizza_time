@@ -10,6 +10,7 @@ const Container = styled.div`
   width: 100vw;
   height: calc(100vh - 100px);
   padding: 30px;
+  overflow: hidden;
 `;
 
 function Home() {

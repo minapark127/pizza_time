@@ -24,6 +24,9 @@ const Container = styled.div`
   flex-direction: column;
   justify-content: flex-end;
   align-items: flex-end;
+  @media (max-width: 425px) {
+    justify-content: center;
+  }
 `;
 const Welcome = styled.h2`
   text-align: end;
@@ -85,7 +88,7 @@ const Detail = styled(Link)`
 const More = styled.section`
   input {
     background-color: rgba(240, 226, 220, 0.95);
-    color: #3c3f42;
+    color: rgb(33, 33, 33);
     :hover {
       background-color: rgba(240, 226, 220, 0.7);
     }
