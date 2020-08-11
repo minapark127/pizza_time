@@ -14,6 +14,10 @@ const Container = styled.section`
     height: 35vh;
     display: grid;
   }
+  @media (max-width: 425px) {
+    height: 45vh;
+    margin-bottom: 10px;
+  }
 `;
 
 const Title = styled.h2`
@@ -31,7 +35,7 @@ const Grid = styled.div`
   grid-gap: 25px 18px;
   @media (max-width: 768px) {
     grid-auto-flow: column;
-    overflow: scroll;
+    overflow-x: scroll;
   }
 `;
 

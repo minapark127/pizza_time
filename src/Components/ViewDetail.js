@@ -14,6 +14,9 @@ const Backdrop = styled.div`
   opacity: 0.3;
   filter: blur(5px);
   z-index: 0;
+  @media (max-width: 768px) {
+    height: 150vh;
+  }
 `;
 const Content = styled.div`
   z-index: 1;
@@ -37,6 +40,9 @@ const Poster = styled.img`
   @media (max-width: 768px) {
     justify-self: center;
   }
+  @media (max-width: 425px) {
+    width: 70%;
+  }
 `;
 const Info = styled.div`
   display: flex;
@@ -45,6 +51,9 @@ const Info = styled.div`
   @media (max-width: 768px) {
     margin-top: 20px;
     align-items: center;
+  }
+  @media (max-width: 425px) {
+    width: 100%;
   }
 `;
 const Title = styled.h2`
@@ -60,6 +69,19 @@ const Genres = styled.ul`
   opacity: 0.8;
   margin-bottom: 8px;
   font-size: 0.9rem;
+  @media (max-width: 425px) {
+    display: none;
+  }
+`;
+const ResponsiveGenres = styled.ul`
+  display: none;
+  @media (max-width: 425px) {
+    display: block;
+    text-align: center;
+    opacity: 0.8;
+    line-height: 1.2;
+    margin-bottom: 15px;
+  }
 `;
 
 const Misc = styled.ul`
@@ -131,6 +153,11 @@ const ViewDetail = ({
                 ))
               : null}
           </Genres>
+          <ResponsiveGenres>
+            {genres
+              ? genres.map((genre, index) => <li key={index}>{genre.name}</li>)
+              : null}
+          </ResponsiveGenres>
           <Misc>
             <Item>
               {release_date

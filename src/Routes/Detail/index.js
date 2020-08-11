@@ -20,6 +20,7 @@ const Div = styled.section`
   grid-template-columns: 1fr;
   grid-template-rows: 3fr 2fr;
   justify-items: center;
+  row-gap: 30px;
 `;
 
 const Tabs = styled.section`
@@ -31,9 +32,10 @@ const Tabs = styled.section`
   align-items: center;
   margin-bottom: 30px;
   @media (max-width: 768px) {
-    width: 95%;
+    width: 100%;
     height: 40vh;
     grid-template-rows: 1fr 4fr;
+    margin-bottom: 150px;
   }
 `;
 const TabHeader = styled.div`
@@ -82,7 +84,7 @@ const ContentContainer = styled.div`
   display: grid;
   grid-auto-rows: 1fr;
   align-items: center;
-  overflow: scroll;
+  overflow-x: scroll;
 `;
 
 const Items = styled.div`

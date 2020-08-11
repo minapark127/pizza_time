@@ -13,6 +13,10 @@ const Container = styled.section`
   margin-top: 30px;
 `;
 
+const Result = styled.h2`
+  padding-left: 10px;
+`;
+
 const Form = styled.form`
   width: 100%;
   display: flex;
@@ -85,7 +89,7 @@ const SearchPresenter = ({
             <Helmet>
               <title>Results on {submittedInput} | Pizza Time</title>
             </Helmet>
-            <h2>Showing results for "{submittedInput}"</h2>
+            <Result>Showing results for "{submittedInput}"</Result>
             <Section title="Results on movies">
               {movieResult.map((movie) => (
                 <View
