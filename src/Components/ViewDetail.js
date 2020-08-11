@@ -20,10 +20,11 @@ const Content = styled.div`
   width: 100%;
   /* height: 100%; */
   position: relative;
+  margin-bottom: 20px;
 `;
 const Grid = styled.div`
   display: grid;
-  grid-auto-rows: 60vh;
+  /* grid-auto-rows: 50vh; */
   grid-template-columns: 1fr 1.8fr;
   column-gap: 100px;
 `;
