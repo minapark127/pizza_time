@@ -11,7 +11,6 @@ const Container = styled.div`
   width: 100vw;
   height: calc(100vh - 60px);
   padding: 30px;
-  /* overflow: hidden; */
 `;
 
 const Div = styled.section`
@@ -35,7 +34,7 @@ const Tabs = styled.section`
     width: 100%;
     height: 40vh;
     grid-template-rows: 1fr 4fr;
-    margin-bottom: 200px;
+    margin-bottom: 300px;
   }
 `;
 const TabHeader = styled.div`

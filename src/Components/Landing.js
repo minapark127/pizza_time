@@ -99,6 +99,8 @@ const More = styled.section`
     align-items: flex-end;
     input {
       margin-bottom: 20px;
+      background-color: #f0e2dc;
+      color: rgb(33, 33, 33);
     }
   }
 `;
