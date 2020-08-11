@@ -12,6 +12,9 @@ const Poster = styled.figure`
   background-position: center;
   background-size: cover;
   transition: transform 0.3s linear;
+  @media (max-width: 768px) {
+    width: 150px;
+  }
 `;
 const Rating = styled.div`
   letter-spacing: 1.3px;

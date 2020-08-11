@@ -25,11 +25,16 @@ const Div = styled.section`
 const Tabs = styled.section`
   position: relative;
   z-index: 1;
-  width: 70%;
+  width: 80%;
   display: grid;
   grid-template-rows: 0.5fr 4.5fr;
   align-items: center;
   margin-bottom: 30px;
+  @media (max-width: 768px) {
+    width: 95%;
+    height: 40vh;
+    grid-template-rows: 1fr 4fr;
+  }
 `;
 const TabHeader = styled.div`
   height: 100%;
@@ -42,24 +47,31 @@ const TabHeader = styled.div`
   .notCurrent {
     border-bottom: 2px solid transparent;
   }
+  display: grid;
+  grid-template-columns:
+    minmax(min-content, 1fr)
+    minmax(min-content, 1fr)
+    minmax(min-content, 1fr);
+  background-color: rgba(60, 63, 66, 0.8);
+  border-bottom: 2px solid transparent;
   transition: border-bottom 0.37s ease-in, text-shadow 0.35s ease-in;
+  box-shadow: 0px 4px 17px -6px rgba(0, 0, 0, 0.6);
 `;
 const Tab = styled.input`
   all: unset;
-  width: 20%;
-  padding: 20px 10px;
   text-align: center;
   font-size: 1.2rem;
   text-transform: capitalize;
   cursor: pointer;
-  background-color: rgba(60, 63, 66, 0.8);
   border-bottom: 2px solid transparent;
-  box-shadow: 0px 4px 17px -6px rgba(0, 0, 0, 0.6);
   :hover {
     border-bottom: 2px solid #f51406;
     background-color: rgba(33, 33, 33, 0.7);
   }
   transition: border-bottom 0.37s ease-in;
+  width: 100%;
+  padding: 20px 0;
+  line-height: 1.5rem;
 `;
 const ContentContainer = styled.div`
   height: 100%;

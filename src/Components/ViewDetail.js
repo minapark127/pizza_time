@@ -18,24 +18,34 @@ const Backdrop = styled.div`
 const Content = styled.div`
   z-index: 1;
   width: 100%;
-  /* height: 100%; */
   position: relative;
   margin-bottom: 20px;
 `;
 const Grid = styled.div`
   display: grid;
-  /* grid-auto-rows: 50vh; */
   grid-template-columns: 1fr 1.8fr;
   column-gap: 100px;
+  @media (max-width: 768px) {
+    grid-auto-flow: column;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 0.6fr;
+  }
 `;
 const Poster = styled.img`
   justify-self: end;
   align-self: center;
+  @media (max-width: 768px) {
+    justify-self: center;
+  }
 `;
 const Info = styled.div`
   display: flex;
   flex-direction: column;
   align-self: center;
+  @media (max-width: 768px) {
+    margin-top: 20px;
+    align-items: center;
+  }
 `;
 const Title = styled.h2`
   font-weight: 600;
@@ -65,12 +75,22 @@ const Overview = styled.div`
     font-size: 0.95rem;
     text-transform: uppercase;
   }
+  @media (max-width: 768px) {
+    width: 70%;
+    margin-bottom: 20px;
+  }
 `;
 const P = styled.p`
   font-size: 18px;
   margin-top: 15px;
   width: 70%;
   line-height: 1.5rem;
+  @media (max-width: 768px) {
+    width: 100%;
+    margin: 15px auto;
+    height: 120px;
+    overflow: scroll;
+  }
 `;
 
 const ViewDetail = ({

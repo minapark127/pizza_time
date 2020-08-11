@@ -47,6 +47,10 @@ const Title = styled.h2`
   text-align: end;
   text-transform: capitalize;
   margin-bottom: 15px;
+  @media (max-width: 768px) {
+    font-size: 35px;
+    line-height: 1.5;
+  }
 `;
 
 const Buttons = styled.div`
@@ -66,6 +70,10 @@ const Buttons = styled.div`
       transform: scale(0.8);
     }
   }
+  @media (max-width: 768px) {
+    flex-direction: column;
+    align-items: flex-end;
+  }
 `;
 const Detail = styled(Link)`
   margin-bottom: 20px;
@@ -80,6 +88,14 @@ const More = styled.section`
     color: #3c3f42;
     :hover {
       background-color: rgba(240, 226, 220, 0.7);
+    }
+  }
+  @media (max-width: 768px) {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    input {
+      margin-bottom: 20px;
     }
   }
 `;
