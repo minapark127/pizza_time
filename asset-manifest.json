@@ -1,0 +1,21 @@
+{
+  "files": {
+    "main.js": "/pizza_time/static/js/main.e29f477c.chunk.js",
+    "main.js.map": "/pizza_time/static/js/main.e29f477c.chunk.js.map",
+    "runtime-main.js": "/pizza_time/static/js/runtime-main.ce4e0524.js",
+    "runtime-main.js.map": "/pizza_time/static/js/runtime-main.ce4e0524.js.map",
+    "static/js/2.56dccf35.chunk.js": "/pizza_time/static/js/2.56dccf35.chunk.js",
+    "static/js/2.56dccf35.chunk.js.map": "/pizza_time/static/js/2.56dccf35.chunk.js.map",
+    "index.html": "/pizza_time/index.html",
+    "precache-manifest.44c0048503aee4ecc3e7910234de00c4.js": "/pizza_time/precache-manifest.44c0048503aee4ecc3e7910234de00c4.js",
+    "service-worker.js": "/pizza_time/service-worker.js",
+    "static/js/2.56dccf35.chunk.js.LICENSE.txt": "/pizza_time/static/js/2.56dccf35.chunk.js.LICENSE.txt",
+    "static/media/noPoster-sml.png": "/pizza_time/static/media/noPoster-sml.f6566347.png",
+    "static/media/noPoster.png": "/pizza_time/static/media/noPoster.381db2c7.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.ce4e0524.js",
+    "static/js/2.56dccf35.chunk.js",
+    "static/js/main.e29f477c.chunk.js"
+  ]
+}
