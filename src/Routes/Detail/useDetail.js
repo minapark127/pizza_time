@@ -11,7 +11,7 @@ function useDetail() {
   const [error, setError] = useState(null);
   const [isMovie] = useState(pathname.includes("/movie/"));
 
-  const updateResult = async () => {
+  const getResult = async () => {
     const parsedId = parseInt(id);
     if (isNaN(parsedId)) {
       return push("/");
@@ -33,8 +33,8 @@ function useDetail() {
   };
 
   useEffect(() => {
-    updateResult();
-  }, []);
+    getResult();
+  });
 
   return { isLoading, result, error };
 }

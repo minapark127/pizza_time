@@ -32,7 +32,7 @@ const Welcome = styled.h2`
     text-shadow: 2.5px 2.5px 10px rgba(200, 200, 200, 1),
       -3px -3px 10px rgba(200, 200, 200, 1);
   }
-  h3 {
+  div {
     text-transform: uppercase;
     font-size: 16px;
     opacity: 0.9;
@@ -108,7 +108,7 @@ const Landing = ({ title, isMovie, id, backdropPath }) => (
         <span role="img" aria-label="pizza">
           🍕
         </span>
-        <h3>tredning now</h3>
+        <div>tredning now</div>
       </Welcome>
       <Title>{title}</Title>
       <Buttons>
