@@ -16,7 +16,6 @@ function useDetail() {
     if (isNaN(parsedId)) {
       return push("/");
     }
-
     try {
       if (isMovie) {
         const { data: result } = await movieApi.movieDetail(parsedId);
@@ -31,10 +30,10 @@ function useDetail() {
       setLoading(false);
     }
   };
-  // eslint-disable-next-line
+
   useEffect(() => {
     getResult();
-  }, []);
+  });
 
   return { isLoading, result, error };
 }
