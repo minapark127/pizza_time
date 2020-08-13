@@ -105,6 +105,13 @@ const More = styled.section`
   }
 `;
 
+const SLink = styled(Link)`
+  color: rgb(33, 33, 33);
+  @media (max-width: 768px) {
+    color: rgb(33, 33, 33);
+  }
+`;
+
 const Landing = ({ title, isMovie, id, backdropPath }) => (
   <>
     <Backdrop bgUrl={`https://image.tmdb.org/t/p/original${backdropPath}`} />
@@ -121,12 +128,12 @@ const Landing = ({ title, isMovie, id, backdropPath }) => (
           <input type="button" value="view detail" />
         </Detail>
         <More>
-          <Link to={`/movie`}>
+          <SLink to={`/movie`}>
             <input type="button" value="▶ more Movies" />
-          </Link>
-          <Link to={`/tv`}>
+          </SLink>
+          <SLink to={`/tv`}>
             <input type="button" value="▶ more TVs" />
-          </Link>
+          </SLink>
         </More>
       </Buttons>
     </Container>
